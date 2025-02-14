@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day Heart Game</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bg-red-700 text-white py-6 w-full">
+    <div class="container mx-auto">
+      <h1 class="text-4xl font-bold text-shadow-lg">Valentine's Day Heart Game</h1>
+      <p class="text-xl mt-2">Hover over the hearts to make them dissipate and click to hear a sweet sound!</p>
+    </div>
+  </header>
+  <main class="container mx-auto mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="heart-container glow">
+        <canvas id="heartCanvas1"></canvas>
+        <svg id="heartSvg1" width="300" height="300" viewBox="0 0 300 300">
+          <path id="heartPath1" d="M150 270 C75 270 0 180 75 120 C100 90 150 120 150 150 C150 120 200 90 225 120 C300 180 225 270 150 270 Z" fill="#ff6b6b" />
+          <path d="M150 270 C75 270 0 180 75 120 C100 90 150 120 150 150 C150 120 200 90 225 120 C300 180 225 270 150 270 Z" fill="url(#glossyGradient)" />
+        </svg>
+      </div>
+      <div class="heart-container glow">
+        <canvas id="heartCanvas2"></canvas>
+        <svg id="heartSvg2" width="300" height="300" viewBox="0 0 300 300">
+          <path id="heartPath2" d="M150 270 C75 270 0 180 75 120 C100 90 150 120 150 150 C150 120 200 90 225 120 C300 180 225 270 150 270 Z" fill="#ff8b8b" />
+          <path d="M150 270 C75 270 0 180 75 120 C100 90 150 120 150 150 C150 120 200 90 225 120 C300 180 225 270 150 270 Z" fill="url(#glossyGradient)" />
+        </svg>
+      </div>
+      <div class="heart-container glow">
+        <canvas id="heartCanvas3"></canvas>
+        <svg id="heartSvg3" width="300" height="300" viewBox="0 0 300 300">
+          <path id="heartPath3" d="M150 270 C75 270 0 180 75 120 C100 90 150 120 150 150 C150 120 200 90 225 120 C300 180 225 270 150 270 Z" fill="#ffabab" />
+          <path d="M150 270 C75 270 0 180 75 120 C100 90 150 120 150 150 C150 120 200 90 225 120 C300 180 225 270 150 270 Z" fill="url(#glossyGradient)" />
+        </svg>
+      </div>
+      <div class="heart-container glow">
+        <canvas id="heartCanvas4"></canvas>
+        <svg id="heartSvg4" width="300" height="300" viewBox="0 0 300 300">
+          <path id="heartPath4" d="M150 270 C75 270 0 180 75 120 C100 90 150 120 150 150 C150 120 200 90 225 120 C300 180 225 270 150 270 Z" fill="#ffcbcb" />
+          <path d="M150 270 C75 270 0 180 75 120 C100 90 150 120 150 150 C150 120 200 90 225 120 C300 180 225 270 150 270 Z" fill="url(#glossyGradient)" />
+        </svg>
+      </div>
+    </div>
+    <div class="mt-10">
+      <button class="interactive-button" onclick="changeHeartColors()">Change Heart Colors</button>
+    </div>
+    <div class="score" id="score">Score: 0</div>
+    <div class="timer" id="timer">Time Left: 30s</div>
+    <audio id="heartAudio" src="audio.mp3"></audio>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
